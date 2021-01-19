@@ -33,7 +33,7 @@ abstract class SleepDatabase: RoomDatabase() {
 
         fun getInstance(context: Context) : SleepDatabase {
             //Multiple threads can ask for a database instance at the same time, leaving us with
-            //two instead one. Thid means only one thread can enter this code at the time, which means
+            //two instead one. This means only one thread can enter this code at the time, which means
             //that only one database is initiated
             synchronized(this) {
                 var instance = INSTANCE //kotlin smart cast is only available to local variables and makes this to return only one instance
